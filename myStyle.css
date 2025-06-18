@@ -1,0 +1,770 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+
+/* body 스타일 */
+body {
+  font-family: 'Pretendard', sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  background-color: #000000;
+  scroll-behavior: smooth;
+  min-width: 1420px;
+}
+
+
+/* 네비게이션 */
+.nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.493);
+  border-radius: 6px;
+  padding: 14px 12px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+}
+
+
+nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  white-space: nowrap;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #000;
+  color: #fff !important;
+  border-radius: 4px;
+}
+
+.nav-link.active {
+  font-weight: 700;
+  color: #000000;
+}
+
+.underline {
+  position: absolute;
+  bottom: 10px;
+  height: 2px;
+  background-color: #000;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+
+
+
+
+/* 섹션 기본 스타일 */
+
+.section {
+  position: relative;
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.section2 {
+  position: relative;
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  overflow: hidden;
+  margin-left: 150px;
+}
+
+.section > .content {
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+
+/* 배경 이미지 + 그라데이션 섹션별 지정 */
+
+#main-image {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slidem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
+  opacity: 0;
+}
+
+#slide1 {
+  opacity: 1; /* 초기 슬라이드만 보이게 */
+  z-index: 1;
+}
+
+
+
+#about, #about2 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 1), transparent 40%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent 40%),
+    url('img/01_03.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 기본은 고정 */
+  transition: background-attachment 0.3s ease; /* 부드러운 전환 (브라우저마다 다름) */
+}
+
+
+/* 이미지 영역 스타일 */
+.image-container {
+  flex: 100%;
+  max-width: 1000px;
+  height: 1100px;
+  transform: scale(0.7);
+  background-image: url('img/js01.png'); /* 이미지 파일 경로로 수정 */
+  background-size: cover;
+  background-position: right;
+  margin-top: -80px;
+  margin-right: -40px;
+  padding-left: 300px;
+  transition: background-image 0.3s ease;
+  
+}
+
+.text-hover1:hover{
+  color: #038f16; /* 원하는 색상으로 바꿔줘 */
+  cursor: pointer; /* 마우스 포인터도 바꾸고 싶으면 */
+}
+.text-hover2:hover{
+  color: #32ff17; /* 원하는 색상으로 바꿔줘 */
+  cursor: pointer; /* 마우스 포인터도 바꾸고 싶으면 */
+}
+.text-hover3:hover{
+  color: #bbff00; /* 원하는 색상으로 바꿔줘 */
+  cursor: pointer; /* 마우스 포인터도 바꾸고 싶으면 */
+}
+.text-hover4:hover{
+  color: #ff9e0d; /* 원하는 색상으로 바꿔줘 */
+  cursor: pointer; /* 마우스 포인터도 바꾸고 싶으면 */
+}
+.text-hover5:hover{
+  color: #ff1212; /* 원하는 색상으로 바꿔줘 */
+  cursor: pointer; /* 마우스 포인터도 바꾸고 싶으면 */
+}
+
+
+
+
+/*숫자로 보는 농촌 소멸*/
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 100px;
+  margin-top: 130px;
+}
+
+/* 카드 2x2 정렬 및 간격 설정 */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 가로 2개 */
+  grid-template-rows: repeat(2, auto);  /* 세로 2개 */
+  gap: 40px; /* 가로 세로 간격 동일 */
+  margin-top: -80px;
+}
+
+/* 개별 카드 */
+.card {
+  width: 400px;
+  height: 260px;
+  padding: 15px;
+  background-color: #464649;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;    
+
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  background-color: #eeeeee; 
+  transform: scale(1.08);
+
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+
+/* 기본 highlight는 색 없음 */
+.card .highlight {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* 마우스를 올렸을 때 highlight 색 변경 */
+.card:hover .highlight {
+  color: #e63946; 
+  font-weight: bold;
+}
+
+
+
+
+/* 스크롤 시 고정 해제 클래스 */
+.unfixed-bg {
+  background-attachment: scroll !important;
+}
+
+
+
+
+/* 소멸 원인 */
+
+#why0 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 1), transparent 40%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent 40%),
+    url('img/02_01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#why1 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 1), transparent 40%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent 40%),
+    url('img/02_03.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#why2 {
+  margin-top: 100px;
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 1), transparent 40%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent 40%),
+    url('img/02_02.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.why_r {
+  width: 800px;
+  text-align: right;
+  margin-right: -500px;
+}
+
+.why_l {
+  width: 800px;
+  text-align: left;
+  margin-left: -500px;
+}
+
+
+
+
+
+/* 사회 파장*/
+
+#so {
+  background-color: #000;
+  
+}
+
+.slider-wrapper {
+  width: 700px;
+  height: 520px;
+  margin: 100px auto;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  align-items: center;
+  will-change: transform;
+  gap: 40px;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 700px;
+  height: 520px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 50%;
+  transition: width 0.6s ease, height 0.6s ease opacity 0.6s ease;
+}
+
+.slide.active {
+  opacity: 100%;
+}
+
+.slide:nth-child(1) {
+  background-image: url('img/03_01.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.slide:nth-child(2) {
+  background-image: url('img/03_03.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.slide:nth-child(3) {
+  background-image: url('img/03_02.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+.overlay1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* 슬라이드 전체 채움 */
+  padding: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  color: white;
+  font-size: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease-in-out;
+  box-sizing: border-box;
+}
+
+.slide.active .overlay1 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay1 h3, 
+.overlay1 p {
+  width: 600px; /* 고정 너비로 줄바꿈 유지 */
+  text-align: center; /* 가로 가운데 정렬 */
+  margin: 0;
+}
+
+.overlay1 h3 {
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.overlay1 p {
+  font-size: 16px;
+  line-height: 1.6;
+  white-space: normal;
+  word-break: break-word;
+  padding-bottom: 50px; /* 아래에서 띄우는 여백 */
+}
+
+
+
+
+
+
+
+
+/* 해결 방안*/
+
+.container {
+  display: flex;
+  gap: 20px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* 박스 기본 설정 */
+.box {
+  flex: 1;
+  height: 520px;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: flex 0.5s ease, border-radius 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.box:hover {
+  flex: 3;
+  border-radius: 12px;
+}
+
+.box .sol_img {
+  flex-grow: 1;
+  border-radius: 12px; 
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  /* 필터 제거 */
+  filter: none;
+  transition: border-radius 0.5s ease;
+}
+
+/* 이미지 어두운 오버레이 추가용 가상 요소 */
+.box .sol_img::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 12px;
+  background: transparent;
+  transition: background 0.5s ease;
+  z-index: 2;
+}
+
+/* 호버 시 어두운 오버레이만 나타나도록 */
+.box:hover .sol_img::after {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.box:nth-child(1) .sol_img {
+  background-image: url('img/04_01.jpg');
+}
+.box:nth-child(2) .sol_img {
+  background-image: url('img/04_02.jpg');
+}
+.box:nth-child(3) .sol_img {
+  background-image: url('img/04_03.jpg');
+}
+.box:nth-child(4) .sol_img {
+  background-image: url('img/04_04.jpg');
+}
+
+/* 텍스트 스타일 */
+/* 텍스트 영역 너비 고정 */
+.overlay {
+  width: 80%;  
+  max-width: 500px; 
+  margin: 0 auto; 
+ 
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  padding: 20px;
+  color: white;
+  background: transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px;
+  z-index: 3;
+}
+
+
+/* 호버 시 오버레이 텍스트 나타남 */
+.box:hover .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay h3 {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  white-space: normal;
+  word-break: break-word;
+  max-height: 70%;
+  overflow: auto;       
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+
+
+
+
+
+
+.section:not([id]) {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+
+
+/* 푸터 */
+footer {
+  background-color: #1b1b1b;
+  color: #777;
+  text-align: center;
+  padding: 2.4rem;
+  font-size: 0.9rem;
+}
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+
+/*기본설정들*/
+
+.row{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;    
+}
+
+.row0{
+    max-width: 1420px;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    flex-wrap: nowrap;
+    padding-left: 30px;
+}
+
+.row2 {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;   
+    word-break: keep-all;       /* 한글 단어 중간 줄바꿈 방지 */
+    overflow-wrap: break-word;  /* 단어 기준 줄바꿈 허용 */
+    white-space: normal;
+}
+
+
+
+.row3 {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;   
+    word-break: keep-all;       /* 한글 단어 중간 줄바꿈 방지 */
+    overflow-wrap: break-word;  /* 단어 기준 줄바꿈 허용 */
+    white-space: normal;
+}
+
+.col1-container {
+  display: flex;
+  gap: 20px;
+}
+
+.col3-container {
+  display: flex;
+  margin-top: -150px;
+}
+
+
+.col1{width: 16.66%; padding: 0rem;}
+.col2{width: 34%; padding: 0rem; }
+.col3{width: 50%; padding: 1rem;}
+.col4{width: 66.66%; padding: 1rem;}
+.col5{width: 83.33%; padding: 1rem;}
+.col6{width: 100%; padding: 1rem;}
+
+.h-20{height: 20px;}
+.h-30{height: 30px;}
+.h-50{height: 50px;}
+.h-100{height: 100px;}
+.h-150{height: 150px;}
+.h-200{height: 200px;}
+.h-300{height: 300px;}
+
+
+/*---- 텍스트 구성을 위한 클래스 모음 ----*/
+
+
+
+.text-mainTitle{  
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 700;
+    font-size: 3.4rem;
+    margin-bottom: -15px;
+}
+
+.text-subTitle{
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.text-subTitle2{
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    white-space: nowrap;
+}
+
+.text-sc{
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+.text-normal{
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    white-space: nowrap;  
+}
+
+
+
+/*숫자농촌*/
+.card-title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #ffffff;
+
+  white-space: nowrap;
+}
+
+.card-desc {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #b8b8b8;
+  line-height: 1.5;
+
+  word-break: keep-all;       /* 한글 단어 중간 줄바꿈 방지 */
+  overflow-wrap: break-word;  /* 단어 기준 줄바꿈 허용 */
+  white-space: normal;
+}
+
+.card:hover .card-title,
+.card:hover .card-desc {
+  color: #0a0a0a;
+}
+
+
+.text-white{color: white;}
+.text-gray{color: rgb(175, 175, 175);}
+.text-purple{color: rgb(128, 55, 255);}
+
+.text-center{text-align: center;}
+.text-right{text-align: right;}
+
+img{
+    width: 100%;
+}
+
+
+/* 소멸 원인 */
+.why-mainTitle{  
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 700;
+    font-size: 3.4rem;
+    margin-top: -100px;
+    margin-bottom: 100px;
+    margin-right: -10px;
+}
+
+.why-title{
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.why-desc{
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.8;
+
+    word-break: keep-all;       /* 한글 단어 중간 줄바꿈 방지 */
+    overflow-wrap: break-word;  /* 단어 기준 줄바꿈 허용 */
+    white-space: normal;
+}
